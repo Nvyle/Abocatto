@@ -5,12 +5,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     Rigidbody2D rb;
-
-
+    
     //Player Controller
     public float MovementSpeed;
     public float JumpForce;
-
 
     private void Start() {
         rb = GetComponent<Rigidbody2D>();
