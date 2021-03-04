@@ -36,9 +36,12 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Level Desing\SwitchController.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Level Desing\LadderController.cs" />
-     <Compile Include="Assets\SwitchController.cs" />
+     <Compile Include="Assets\Scripts\Level Desing\CountdownTimer.cs" />
+     <Compile Include="Assets\Scripts\Level Desing\GameManager.cs" />
+     <Compile Include="Assets\MenuManager.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/2020.2.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
