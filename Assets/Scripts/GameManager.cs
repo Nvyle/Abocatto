@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum GameState{
+    intro,
+    task,
     menu,
     inGame,
     gameOver
@@ -11,7 +13,7 @@ public enum GameState{
 public class GameManager : MonoBehaviour
 {
 
-    public GameState currentGameState = GameState.menu;
+    public GameState currentGameState = GameState.intro;
 
     public static GameManager sharedInstance;
 

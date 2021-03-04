@@ -8,6 +8,8 @@ public class LadderController : MonoBehaviour
 
      void OnTriggerStay2D(Collider2D other)
     {
+        if(GameManager.sharedInstance.currentGameState == GameState.inGame){
+
         if(other.tag == "Player" && Input.GetKey(KeyCode.W))
         {
             other.GetComponent<Rigidbody2D>().velocity = new Vector2 (0, climbSpeed);
@@ -17,6 +19,8 @@ public class LadderController : MonoBehaviour
             other.GetComponent<Rigidbody2D>().velocity = new Vector2 (0, -climbSpeed);
         }else {
             other.GetComponent<Rigidbody2D> ().velocity = new Vector2 (0, 0);
+        }
+        
         }
     }
 }
