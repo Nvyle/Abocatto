@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     Rigidbody2D rb;
-    
+
     //Player Controller
     public float MovementSpeed;
     //public float JumpForce;
@@ -14,8 +14,10 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
- private void FixedUpdate() {
-     if(GameManager.sharedInstance.currentGameState == GameState.inGame){
+    private void FixedUpdate() 
+    {
+        if(GameManager.sharedInstance.currentGameState == GameState.inGame)
+        {
 
             var movement = Input.GetAxis("Horizontal");
 
@@ -28,9 +30,7 @@ public class PlayerController : MonoBehaviour
                 
                 rb.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
             }*/
+
         }
- }
-    private void Update() {
-        
     }
 }
