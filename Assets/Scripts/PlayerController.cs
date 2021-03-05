@@ -30,9 +30,6 @@ public class PlayerController : MonoBehaviour
                 
                 rb.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
             }*/
-            if(Input.GetKeyDown(KeyCode.F)){
-                PlayerDead();
-            }
         }
     }
 

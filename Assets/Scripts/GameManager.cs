@@ -7,7 +7,8 @@ public enum GameState{
     task,
     menu,
     inGame,
-    gameOver
+    gameOver,
+    win
 }
 
 public class GameManager : MonoBehaviour
@@ -58,6 +59,10 @@ public class GameManager : MonoBehaviour
         SetGameState(GameState.menu);
     }
 
+    public void WinGame(){
+        SetGameState(GameState.win);
+    }
+
     private void SetGameState(GameState newGameState){
         if(newGameState == GameState.menu){
             
@@ -70,6 +75,14 @@ public class GameManager : MonoBehaviour
         } else if(newGameState == GameState.gameOver){
 
             //TODO: preparar el juego para Game Over.
+
+        }else if (newGameState == GameState.win){
+
+            //TODO: MENU WIN
+        }else if(newGameState == GameState.intro){
+
+            //TODO: MENU INTRO
+
         }
 
         this.currentGameState = newGameState;

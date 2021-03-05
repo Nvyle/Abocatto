@@ -7,13 +7,16 @@ public class PlayerOxygen : MonoBehaviour
 {
     public Slider oxygenBar;
     public float oxygenAmount;
-    float currentOxygen;
-
+    float currentOxygen; 
+    public Image Target_Image;
+    
+    
     PlayerController controller;
 
     void Start() {
         currentOxygen = oxygenAmount;
         controller = GetComponent<PlayerController>();
+        
     }
 
     void OxygenDecreased(){
@@ -23,11 +26,25 @@ public class PlayerOxygen : MonoBehaviour
     
     void Update() {
 
-        if(GameManager.sharedInstance.currentGameState != GameState.intro 
-        && GameManager.sharedInstance.currentGameState != GameState.gameOver
-        && GameManager.sharedInstance.currentGameState != GameState.menu)
+        if(GameManager.sharedInstance.currentGameState == GameState.task 
+        || GameManager.sharedInstance.currentGameState == GameState.inGame)
         {
             OxygenDecreased();
+            
+            if(currentOxygen <= 25)
+            {
+                change_color();
+                if(currentOxygen <= 0)
+                {
+                    controller.PlayerDead();
+                }
+            }
         }
     }
+
+    public void change_color() 
+    {
+        Target_Image.GetComponent<Image>().color = new Color32 (171, 43 ,57, 255);
+    } 
+ 
 }

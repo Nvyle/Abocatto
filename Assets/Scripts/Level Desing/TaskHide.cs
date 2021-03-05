@@ -8,7 +8,9 @@ public class TaskHide : MonoBehaviour
 
     public void TASKHIDE()
     {
-        if(GameManager.sharedInstance.currentGameState == GameState.task && GameManager.sharedInstance.currentGameState != GameState.gameOver){
+        if(GameManager.sharedInstance.currentGameState == GameState.task ||
+        GameManager.sharedInstance.currentGameState == GameState.inGame)
+        {
         GameManager.sharedInstance.currentGameState = GameState.inGame;
         taskHide.SetActive(false);
         }
