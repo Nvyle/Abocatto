@@ -11,7 +11,9 @@ public class SwitchController : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if(GameManager.sharedInstance.currentGameState == GameState.inGame && GameManager.sharedInstance.currentGameState != GameState.gameOver){
+        if(GameManager.sharedInstance.currentGameState == GameState.inGame 
+        && GameManager.sharedInstance.currentGameState != GameState.gameOver)
+        {
             if(other.tag == "Player" && Input.GetKey(KeyCode.E))
             {
                 GameManager.sharedInstance.currentGameState = GameState.task;
