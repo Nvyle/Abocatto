@@ -14,6 +14,8 @@ public enum GameState{
 public class GameManager : MonoBehaviour
 {
 
+    public GameObject WinPanel;
+    public GameObject LosePanel;
     public GameState currentGameState = GameState.intro;
 
     public static GameManager sharedInstance;
@@ -74,9 +76,11 @@ public class GameManager : MonoBehaviour
 
         } else if(newGameState == GameState.gameOver){
 
+            LosePanel.SetActive(true);
             //TODO: preparar el juego para Game Over.
 
         }else if (newGameState == GameState.win){
+            WinPanel.SetActive(true);
 
             //TODO: MENU WIN
         }else if(newGameState == GameState.intro){
