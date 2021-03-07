@@ -5,7 +5,6 @@ using UnityEngine;
 public class LadderController : MonoBehaviour
 {
     public float climbSpeed;
-
      void OnTriggerStay2D(Collider2D other)
     {
         if(GameManager.sharedInstance.currentGameState == GameState.inGame){
@@ -19,8 +18,7 @@ public class LadderController : MonoBehaviour
             other.GetComponent<Rigidbody2D>().velocity = new Vector2 (0, -climbSpeed);
         }else {
             other.GetComponent<Rigidbody2D> ().velocity = new Vector2 (0, 0);
-        }
-        
+            }
         }
     }
 }

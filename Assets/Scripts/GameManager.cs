@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
         StartCoroutine (WaitSys ());
     }
 
-     void Start()
+    void Start()
     {
         controller = GameObject.Find("Player").GetComponent<PlayerController>();
     }
