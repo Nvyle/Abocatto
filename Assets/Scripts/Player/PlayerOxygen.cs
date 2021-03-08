@@ -8,28 +8,53 @@ public class PlayerOxygen : MonoBehaviour
 
     [Header("ElectricTask")]
     
+    [SerializeField]
     public bool EnergyOff = true;
+
+    [SerializeField]
     public GameObject On;
+
+
     public GameObject Off;
     
     [Header("TaskCD")]
 
+    [SerializeField]
+    public float medikitHeal;
+
+    [SerializeField]
     public float cooldownHeal;
+
+    [SerializeField]
     private float nextHealTime = 0f;
+
+    [SerializeField]
     public float AllTaskCD;
 
     [Header("Status Panic")]
 
+    [SerializeField]
     public Slider alteredBar;
+
+    [SerializeField]
     public float alteredAmount;
+
+    [SerializeField]
     float currentAltered;
+    
     public Image alteredWarning;
   
     [Header("Status Oxygen")]
 
+    [SerializeField]
     public Slider oxygenBar;
+
+    [SerializeField]
     public float oxygenAmount;
+
+    [SerializeField]
     float currentOxygen; 
+
     public Image Target_Image;
     
     PlayerController controller;
@@ -94,7 +119,7 @@ public class PlayerOxygen : MonoBehaviour
         if(Time.time > nextHealTime)
         {          
             if(Input.GetMouseButtonDown(0)){
-                currentAltered -= 50f;
+                currentAltered -= medikitHeal;
                 nextHealTime = Time.time + cooldownHeal;
             }
         }

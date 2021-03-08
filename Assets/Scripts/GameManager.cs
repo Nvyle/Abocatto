@@ -12,10 +12,11 @@ public enum GameState{
 }
 
 public class GameManager : MonoBehaviour
-{
-
+{   
+    //Panels
     public GameObject WinPanel;
     public GameObject LosePanel;
+
     public GameState currentGameState = GameState.intro;
 
     public static GameManager sharedInstance;
@@ -34,13 +35,12 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         controller = GameObject.Find("Player").GetComponent<PlayerController>();
-    }
+
+        }
 
     void Update()
     {
-       /*if(Input.GetButtonDown("Submit") && currentGameState != GameState.inGame){
-            StartGame();
-        }*/
+        var Menu = Input.GetAxisRaw("Cancel");
     }
 
     IEnumerator WaitSys(){
@@ -65,13 +65,15 @@ public class GameManager : MonoBehaviour
         SetGameState(GameState.win);
     }
 
+
     private void SetGameState(GameState newGameState){
         if(newGameState == GameState.menu){
             
-            //TODO: colocar la logica del menu
-
+            //TODO: Logica del menu
+           
         }else if(newGameState == GameState.inGame)
         {
+            
             //TODO: hay que preparar la escena para jugar
 
         } else if(newGameState == GameState.gameOver){
@@ -85,6 +87,7 @@ public class GameManager : MonoBehaviour
             //TODO: MENU WIN
         }else if(newGameState == GameState.intro){
 
+        
             //TODO: MENU INTRO
 
         }

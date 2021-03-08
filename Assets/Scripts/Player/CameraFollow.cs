@@ -6,6 +6,7 @@ public class CameraFollow : MonoBehaviour
 {
     public Transform PlayerTransform;
 
+
     public Vector3 offset = new Vector3(0.2f, 0.0f, -10f);
 
     public float dampingTime = 0.3f;
@@ -16,7 +17,6 @@ public class CameraFollow : MonoBehaviour
     {
         Application.targetFrameRate = 60;
     }
-
     void FixedUpdate()
     {
         MoveCamera(true);
