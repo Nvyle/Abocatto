@@ -20,7 +20,7 @@ public class PlayerOxygen : MonoBehaviour
     [Header("TaskCD")]
 
     [SerializeField]
-    public float medikitHeal;
+    public float medikitHeal = 100f;
 
     [SerializeField]
     public float cooldownHeal;
@@ -73,6 +73,8 @@ public class PlayerOxygen : MonoBehaviour
         {
             OxygenDecreased();
             StateAlteredDecreased();
+            
+
 
             if(currentAltered >= 75){
 
@@ -115,12 +117,22 @@ public class PlayerOxygen : MonoBehaviour
     }
 
    public void BoostedKit()
-   {
-        if(Time.time > nextHealTime)
-        {          
-            if(Input.GetMouseButtonDown(0)){
+   {    
+       if(GameManager.sharedInstance.currentGameState == GameState.task 
+        || GameManager.sharedInstance.currentGameState == GameState.inGame)
+        {
+            if(Time.time > nextHealTime)
+            {          
+                
                 currentAltered -= medikitHeal;
                 nextHealTime = Time.time + cooldownHeal;
+                Debug.LogWarning("HEAL+");
+
+                if (currentAltered <= -0.1f){
+                currentAltered = 0f;
+                Debug.Log("0");
+                
+                }
             }
         }
     }

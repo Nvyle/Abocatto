@@ -63,12 +63,14 @@ public class PlayerController : MonoBehaviour
            
            if (other.tag == "LadderExit"){
                animator.SetBool("LadderUp", false);
+               animator.SetBool("StaticLadder", false);
            }
             if(other.tag == "Ladder" && Input.GetKey(KeyCode.W))
             {
                 rb.velocity = new Vector2 (0, climbSpeed);
                
-                animator.SetBool("LadderUp", true);               
+                animator.SetBool("LadderUp", true);
+                animator.SetBool("StaticLadder", false);
 
             }
             else if(other.tag == "Ladder" && Input.GetKey(KeyCode.S))
@@ -76,12 +78,12 @@ public class PlayerController : MonoBehaviour
                 rb.velocity = new Vector2 (0, -climbSpeed);
 
                 animator.SetBool("LadderUp", true);
+                animator.SetBool("StaticLadder", false);
                 
-
             }else {
                 if(other.tag == "Ladder"){
                     rb.velocity = new Vector2 (0, 0);
-                    animator.SetBool("LadderUp", false);
+                    animator.SetBool("StaticLadder", true); // LadderUp false
                 }       
             }
         }

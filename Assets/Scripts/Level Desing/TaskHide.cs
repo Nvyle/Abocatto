@@ -22,6 +22,9 @@ public class TaskHide : MonoBehaviour
         Time.timeScale = 1f;
     }
 
+    public void MainMenu(){
+        SceneManager.LoadScene("MainMenu");
+    }
     public void PlayGame(){
         SceneManager.LoadScene("Game");
     }
