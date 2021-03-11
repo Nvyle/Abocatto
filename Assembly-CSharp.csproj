@@ -37,6 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Level Desing\AnimatorDisabled.cs" />
+     <Compile Include="Assets\Scripts\Level Desing\AudioController.cs" />
      <Compile Include="Assets\Scripts\GameManager.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerOxygen.cs" />
@@ -44,10 +45,10 @@
      <Compile Include="Assets\Scripts\Player\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\Player\CountdownTimer.cs" />
      <Compile Include="Assets\Scripts\Level Desing\SwitchController.cs" />
+     <Compile Include="Assets\Scripts\Level Desing\NextTextController.cs" />
      <Compile Include="Assets\Scripts\Level Desing\TaskHide.cs" />
      <Compile Include="Assets\Scripts\Level Desing\LadderController.cs" />
-     <Compile Include="Assets\Scripts\Level Desing\NextTextController.cs" />
-     <Compile Include="Assets\Scripts\Level Desing\AudioController.cs" />
+     <Compile Include="Assets\TimerText.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:/Program Files/Unity/2020.2.5f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
