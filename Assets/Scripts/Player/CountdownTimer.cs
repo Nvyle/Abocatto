@@ -23,7 +23,7 @@ public class CountdownTimer : MonoBehaviour
         || GameManager.sharedInstance.currentGameState == GameState.inGame)
         {
             currentTime -= DAYSPEED * Time.deltaTime;
-            countdownText.text = currentTime.ToString ("0");
+            countdownText.text = currentTime.ToString ("0" + "h");
 
             if(currentTime <= 24){
                 messageWaitForHelp.SetActive(true);
